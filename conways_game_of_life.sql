@@ -7,7 +7,7 @@ with recursive start (alive, x, y) as (
 ),
 cgol (alive, x, y, n, nei) as (
         select alive, x, y, 0, 0
-        from start s1
+        from start
     union
         select (
             case
@@ -34,5 +34,5 @@ cgol (alive, x, y, n, nei) as (
 
 select *
 from cgol
-where n = 5
+where n = 0 and alive
 order by n, y, x;
